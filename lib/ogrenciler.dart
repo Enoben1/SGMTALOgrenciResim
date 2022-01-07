@@ -53,17 +53,15 @@ class ogrenciler2 extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Container(width: 150, height: 150 ,child: Image.asset("resimler/ogrenciler/" + listenumara[index] + ".JPG")),
                         Column(
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(listeisim.length>index+1?listeisim[index]:"Adı Soyadı"),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(listenumara[index]),
-                            ),
+                            GestureDetector(onTap: (){
+                              showDialog(context: context, builder: (BuildContext context) => new AlertDialog(
+                                title: Text(listeisim[index]),
+                                content: Container(width: 500, height: 500 ,child: Image.asset("resimler/ogrenciler/" + listenumara[index] + ".JPG")),
+                              ));
+                            } ,child: Container(width: 100, height: 100 ,child: Image.asset("resimler/ogrenciler/" + listenumara[index] + ".JPG"))),
+                            Text(listeisim[index]),
                           ],
                         ),
                       ],

@@ -49,7 +49,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Sabiha Gökçen MTAL Öğrenci Resimleri"),),
+      appBar: AppBar(title: Text("Sabiha Gökçen MTAL Öğrenci Resimleri", style: TextStyle(fontSize: 15),),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 5),
+          child: Icon(Icons.add),
+        ),
+      ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
